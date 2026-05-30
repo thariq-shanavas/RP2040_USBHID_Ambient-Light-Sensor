@@ -137,6 +137,16 @@ update_brightness() {
 
 # ── Main ─────────────────────────────────────────────────────────────────────
 check_sensor
+# If started very early during boot the display environment may not be ready.
+# If `kscreen_qt_platform` returns "offscreen" here, wait a short while and
+# exit so that systemd can restart this service when the display server is
+# available.
+display_platform="$(kscreen_qt_platform)"
+if [[ "$display_platform" = "offscreen" ]]; then
+  sleep 5
+  error "Display server not ready (QT_QPA_PLATFORM=offscreen). Exiting."
+  exit 1
+fi
 trap "exit" SIGINT SIGTERM
 
 while true; do
