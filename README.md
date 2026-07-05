@@ -4,19 +4,19 @@ Build a **plug-and-play USB Ambient Light Sensor (ALS)** with a Raspberry Pi RP2
 <p align="center">
 <img src="Images/sensor-2.jpg" alt="Sensor Example 2" width="400" />
 </p align="center">
-This project helps your computer automatically adjust monitor brightness based on room lighting. It works with either:
+This project helps your computer automatically adjust the brightness of external monitors* based on ambient lighting. It works with either:
 
-- [Clight](https://github.com/FedeDP/Clight) on Linux for DDC/CI-capable monitors (most HDMI and DisplayPort monitors),
+- [Clight](https://github.com/FedeDP/Clight) on Linux,
 - the included `auto_brightness.sh` script, or
 - some Linux desktop environments that have native ALS sensor support (though this capability is only just becoming mature as of 2026)
 
-This is an **open hardware** project, intended for makers who are comfortable with basic electronics. Depending on your board and setup, you may need to do some soldering, simple wiring, and firmware flashing.
+This is an **open hardware** project, intended for makers who are comfortable with some basic electronics. You will need a Raspberry Pi Pico development board. You will need to do some soldering and simple wiring.
+
+\* DDC/CI-capable monitors - practically all HDMI and DisplayPort monitors
 
 ### Why USB HID
 
-This sensor implements the **USB HID (Human Interface Device)** standard. HID is important because operating systems already know how to talk to HID devices, so setup is easier and driver-free.
-
-In practice, that means the sensor is detected automatically on **Linux, Windows, and macOS**, making it a strong base for automatic brightness tools and custom scripts.
+This sensor implements the **USB HID (Human Interface Device)** standard. As operating systems already know how to talk to HID devices, this sensor is plug-and-play and requires no additional drivers. It is detected automatically on Linux, Windows, and macOS, making it compatible with standard automatic brightness software.
 
 ### Overview
 [Requirements](https://github.com/thariq-shanavas/RP2040_USBHID_Ambient-Light-Sensor#requirements)\
