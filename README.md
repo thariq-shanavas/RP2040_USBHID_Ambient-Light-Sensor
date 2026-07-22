@@ -54,8 +54,11 @@ I recommend a [Waveshare RP2040-Zero](https://www.waveshare.com/rp2040-zero.htm)
 <p align="center">
 <img src="Images/sensor-1.jpg" alt="Sensor Example 1" width="200" /> <img src="Images/sensor-2.jpg" alt="Sensor Example 2" width="200" />
 </p align="center">
+
 2. While holding the bootsel button on the RP2040-Zero board, connect it to your PC. The device should appear as a USB mass storage device. Drag and drop the .uf2 file from the [github releases](https://github.com/thariq-shanavas/RP2040_USBHID_Ambient-Light-Sensor/releases) to the mass storage device. If the device doesn't automatically reboot, simply unplug and re-plug it again.
+
 3. You can check the live sensor readings via `cat /sys/bus/iio/devices/iio\:device0/in_illuminance_raw`. Without a case, the bare sensor tops out at about 660 Lux. Which isn't very much, but it's more than plenty for meaningful automatic brightness adjustment.
+
 4. That's it, you're done! You may now set up [Clight](https://github.com/FedeDP/Clight) for automatic brightness adjustment, or use the auto-brightness bash script in this repo.
 
 ### Clight Instructions
